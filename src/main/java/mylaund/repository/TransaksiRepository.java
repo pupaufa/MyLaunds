@@ -11,4 +11,6 @@ import mylaund.model.Pembayaran;
 public interface TransaksiRepository {
     void simpanPembayaran(Pembayaran pembayaran);
     List<ITransaksi> ambilSemuaRiwayat();
+    Pembayaran cariPembayaranLunas(String idPesanan);
+    boolean sudahLunas(String idPesanan);
 }
