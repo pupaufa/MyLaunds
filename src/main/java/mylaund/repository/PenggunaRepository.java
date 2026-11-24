@@ -10,5 +10,6 @@ import mylaund.model.Pengguna;
 public interface PenggunaRepository {
     void simpan(Pengguna pengguna);
     Pengguna cariByUsername(String username);
+    Pengguna cariById(String idPengguna);
     List<Pengguna> ambilSemua();
 }
