@@ -23,6 +23,13 @@ public class Pembayaran implements ITransaksi {
         this.lunas = false;
     }
 
+    /** Memulihkan pembayaran dari database. */
+    public Pembayaran(String idPembayaran, Pesanan pesanan, LocalDateTime tanggalBayar,
+            double jumlahBayar, String metode, boolean lunas) {
+        this(idPembayaran, pesanan, tanggalBayar, jumlahBayar, metode);
+        this.lunas = lunas;
+    }
+
     public boolean catat() {
         if (jumlahBayar < pesanan.getTotalBiaya()) {
             return false;
@@ -64,6 +71,11 @@ public class Pembayaran implements ITransaksi {
 
     public String getMetode() {
         return metode;
+    }
+
+    /** Selisih uang yang dibayar dengan total tagihan. Tidak pernah negatif. */
+    public double getKembalian() {
+        return Math.max(0.0, jumlahBayar - pesanan.getTotalBiaya());
     }
 
     public boolean isLunas() {

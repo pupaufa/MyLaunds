@@ -5,19 +5,12 @@
 package mylaund.model;
 
 public class Pekerja extends Pengguna {
-    private String bagian;
-
-    public Pekerja(String idPengguna, String nama, String username, String passwordHash, String bagian) {
+    public Pekerja(String idPengguna, String nama, String username, String passwordHash) {
         super(idPengguna, nama, username, passwordHash);
-        this.bagian = bagian;
     }
 
     @Override
     public String getPeran() {
         return "PEKERJA";
-    }
-
-    public String getBagian() {
-        return bagian;
     }
 }

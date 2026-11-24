@@ -18,6 +18,16 @@ public class DetailPesanan {
         this.subtotal = hitungSubtotal();
     }
 
+    /** Memulihkan detail dari database dengan subtotal yang tersimpan (tidak dihitung ulang). */
+    public DetailPesanan(LayananLaundry layanan, double jumlah, double subtotal) {
+        if (layanan == null || jumlah <= 0) {
+            throw new IllegalArgumentException("Layanan tidak valid atau jumlah <= 0.");
+        }
+        this.layanan = layanan;
+        this.jumlah = jumlah;
+        this.subtotal = subtotal;
+    }
+
     public double hitungSubtotal() {
         this.subtotal = layanan.hitungHarga(jumlah);
         return this.subtotal;

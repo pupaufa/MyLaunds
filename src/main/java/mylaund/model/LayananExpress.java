@@ -20,4 +20,9 @@ public class LayananExpress extends LayananLaundry {
     public double getBiayaTambahan() {
         return biayaTambahan;
     }
+
+    @Override
+    public String getJenis() {
+        return "Express";
+    }
 }

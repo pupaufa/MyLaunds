@@ -6,9 +6,7 @@ package mylaund.model;
 
 public enum StatusPesanan {
     DITERIMA,
-    DICUCI,
-    DIKERINGKAN,
-    DISETRIKA,
+    DIPROSES,
     SIAP_DIAMBIL,
     SELESAI
 }

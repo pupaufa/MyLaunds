@@ -49,4 +49,20 @@ public abstract class LayananLaundry {
     public int getDurasiHari() {
         return durasiHari;
     }
+
+    public abstract String getJenis();
+
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof LayananLaundry && idLayanan.equals(((LayananLaundry) o).idLayanan);
+    }
+
+    @Override
+    public int hashCode() {
+        return idLayanan.hashCode();
+    }
+
+    public String getSatuan() {
+        return "kg";
+    }
 }

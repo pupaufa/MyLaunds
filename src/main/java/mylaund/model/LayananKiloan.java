@@ -21,4 +21,9 @@ public class LayananKiloan extends LayananLaundry {
     public double getMinimalBerat() {
         return minimalBerat;
     }
+
+    @Override
+    public String getJenis() {
+        return "Kiloan";
+    }
 }

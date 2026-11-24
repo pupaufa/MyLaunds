@@ -21,6 +21,16 @@ public class Notifikasi {
         this.terkirim = false;
     }
 
+    /** Memulihkan notifikasi dari database. */
+    public Notifikasi(String idNotifikasi, Pelanggan penerima, String pesan,
+            LocalDateTime waktuKirim, boolean terkirim) {
+        this.idNotifikasi = idNotifikasi;
+        this.penerima = penerima;
+        this.pesan = pesan;
+        this.waktuKirim = waktuKirim;
+        this.terkirim = terkirim;
+    }
+
     public void kirim() {
         this.waktuKirim = LocalDateTime.now();
         this.terkirim = true;

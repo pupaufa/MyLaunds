@@ -20,4 +20,14 @@ public class LayananSatuan extends LayananLaundry {
     public String getKategoriItem() {
         return kategoriItem;
     }
+
+    @Override
+    public String getJenis() {
+        return "Satuan";
+    }
+
+    @Override
+    public String getSatuan() {
+        return "pcs";
+    }
 }

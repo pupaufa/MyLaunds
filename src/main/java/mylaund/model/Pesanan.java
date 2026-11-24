@@ -31,6 +31,22 @@ public class Pesanan implements ITransaksi {
         this.daftarDetail = new ArrayList<>();
     }
 
+    /** Memulihkan pesanan utuh dari database (status, total, estimasi, dan detail apa adanya). */
+    public Pesanan(String idPesanan, Pelanggan pelanggan, LocalDateTime tanggalMasuk,
+            LocalDateTime estimasiSelesai, double totalBiaya, StatusPesanan status,
+            List<DetailPesanan> detail) {
+        if (pelanggan == null) {
+            throw new IllegalArgumentException("Pelanggan tidak boleh null.");
+        }
+        this.idPesanan = idPesanan;
+        this.pelanggan = pelanggan;
+        this.tanggalMasuk = tanggalMasuk;
+        this.estimasiSelesai = estimasiSelesai;
+        this.totalBiaya = totalBiaya;
+        this.status = status;
+        this.daftarDetail = new ArrayList<>(detail);
+    }
+
     // Komposisi: instansiasi DetailPesanan dikelola penuh oleh kelas induk (Pesanan)
     public void tambahDetail(LayananLaundry layanan, double jumlah) {
         DetailPesanan detailBaru = new DetailPesanan(layanan, jumlah);
@@ -100,5 +116,15 @@ public class Pesanan implements ITransaksi {
 
     public List<DetailPesanan> getDaftarDetail() {
         return Collections.unmodifiableList(daftarDetail);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof Pesanan && idPesanan.equals(((Pesanan) o).idPesanan);
+    }
+
+    @Override
+    public int hashCode() {
+        return idPesanan.hashCode();
     }
 }
