@@ -239,12 +239,12 @@ Dicatat secara terbuka agar jelas batasan versi saat ini:
 |------|-------|
 | Aufa | Ketua tim |
 | Naveed | Pengembang |
-| Tarin | Perancang kelas |
-| Izza | Analis kebutuhan |
-| Iva | Penguji & dokumentasi |
+| Oktarina | Perancang kelas |
+| Izzana | Analis kebutuhan |
+| Siva | Penguji & dokumentasi |
 
 ---
 
 <div align="center">
-Dibuat dengan ☕ dan Java oleh Tim espisangijo
+espisangijo
 </div>
